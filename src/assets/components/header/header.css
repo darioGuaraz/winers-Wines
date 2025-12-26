@@ -20,4 +20,38 @@ header {
 
 .hero-logo {
   width: 50%;
+  max-width: 600px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  header {
+    height: 90vh;
+  }
+
+  .hero-logo {
+    width: 60%;
+  }
+}
+
+/* Tablet pequeño */
+@media (max-width: 768px) {
+  header {
+    height: 60vh;
+  }
+
+  .hero-logo {
+    width: 70%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    height: 90vh;
+  }
+
+  .hero-logo {
+    width: 80%;
+  }
 }

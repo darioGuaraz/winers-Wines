@@ -4,125 +4,161 @@
     "imagen": "/img/vino1.png",
     "titulo": "Huella Pampa",
     "precio": 100,
-    "descripcion": "Malbec Sirah"
+    "descripcion": "Malbec de alta calidad",
+    "cepa": "malbec",
+    "bodega": "Bodega Pampa"
   },
   {
     "id": 2,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 2",
+    "titulo": "Vino Merlot Premium",
     "precio": 150,
-    "descripcion": "Merlot"
+    "descripcion": "Merlot elegante y suave",
+    "cepa": "merlot",
+    "bodega": "Bodega Premium"
   },
   {
     "id": 3,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 3",
+    "titulo": "Malbec Reserva",
     "precio": 200,
-    "descripcion": "Malbec"
+    "descripcion": "Malbec de reserva especial",
+    "cepa": "malbec",
+    "bodega": "Bodega Elite"
   },
   {
     "id": 4,
     "imagen": "/img/vino1.png",
-    "titulo": "Producto 4",
+    "titulo": "Petit Verdot Clásico",
     "precio": 120,
-    "descripcion": "Petit Verdot"
+    "descripcion": "Petit Verdot intenso",
+    "cepa": "petit_verdot",
+    "bodega": "Bodega Clásica"
   },
   {
     "id": 5,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 5",
+    "titulo": "Bonarda Tradicional",
     "precio": 180,
-    "descripcion": "Bonarda"
+    "descripcion": "Bonarda auténtica argentina",
+    "cepa": "bonarda",
+    "bodega": "Bodega Tradicional"
   },
   {
     "id": 6,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 6",
+    "titulo": "Syrah Exclusivo",
     "precio": 210,
-    "descripcion": "Descripción del producto 6"
+    "descripcion": "Syrah con carácter",
+    "cepa": "syrah",
+    "bodega": "Bodega Exclusiva"
   },
   {
     "id": 7,
     "imagen": "/img/vino1.png",
-    "titulo": "Producto 7",
+    "titulo": "Cabernet Sauvignon",
     "precio": 130,
-    "descripcion": "Descripción del producto 7"
+    "descripcion": "Cabernet robusto",
+    "cepa": "cabernet",
+    "bodega": "Bodega Clásica"
   },
   {
     "id": 8,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 8",
+    "titulo": "Merlot Fino",
     "precio": 160,
-    "descripcion": "Descripción del producto 8"
+    "descripcion": "Merlot delicado",
+    "cepa": "merlot",
+    "bodega": "Bodega Premium"
   },
   {
     "id": 9,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 9",
+    "titulo": "Syrah Gran Reserva",
     "precio": 220,
-    "descripcion": "Descripción del producto 9"
+    "descripcion": "Syrah envejecido",
+    "cepa": "syrah",
+    "bodega": "Bodega Elite"
   },
   {
     "id": 10,
     "imagen": "/img/vino1.png",
-    "titulo": "Producto 10",
+    "titulo": "Malbec Joven",
     "precio": 140,
-    "descripcion": "Descripción del producto 10"
+    "descripcion": "Malbec fresco",
+    "cepa": "malbec",
+    "bodega": "Bodega Pampa"
   },
   {
     "id": 11,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 11",
+    "titulo": "Cabernet Reserve",
     "precio": 170,
-    "descripcion": "Descripción del producto 11"
+    "descripcion": "Cabernet de reserva",
+    "cepa": "cabernet",
+    "bodega": "Bodega Exclusiva"
   },
   {
     "id": 12,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 12",
+    "titulo": "Bonarda Premium",
     "precio": 230,
-    "descripcion": "Descripción del producto 12"
+    "descripcion": "Bonarda premium",
+    "cepa": "bonarda",
+    "bodega": "Bodega Premium"
   },
   {
     "id": 13,
     "imagen": "/img/vino1.png",
-    "titulo": "Producto 13",
+    "titulo": "Petit Verdot Fino",
     "precio": 150,
-    "descripcion": "Descripción del producto 13"
+    "descripcion": "Petit Verdot especial",
+    "cepa": "petit_verdot",
+    "bodega": "Bodega Elite"
   },
   {
     "id": 14,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 14",
+    "titulo": "Malbec Intenso",
     "precio": 190,
-    "descripcion": "Descripción del producto 14"
+    "descripcion": "Malbec con cuerpo",
+    "cepa": "malbec",
+    "bodega": "Bodega Tradicional"
   },
   {
     "id": 15,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 15",
+    "titulo": "Syrah Expresión",
     "precio": 240,
-    "descripcion": "Descripción del producto 15"
+    "descripcion": "Syrah expresivo",
+    "cepa": "syrah",
+    "bodega": "Bodega Exclusiva"
   },
   {
     "id": 16,
     "imagen": "/img/vino1.png",
-    "titulo": "Producto 16",
+    "titulo": "Cabernet Clásico",
     "precio": 160,
-    "descripcion": "Descripción del producto 16"
+    "descripcion": "Cabernet tradicional",
+    "cepa": "cabernet",
+    "bodega": "Bodega Clásica"
   },
   {
     "id": 17,
     "imagen": "/img/vino2.png",
-    "titulo": "Producto 17",
+    "titulo": "Merlot Elegancia",
     "precio": 200,
-    "descripcion": "Descripción del producto 17"
+    "descripcion": "Merlot elegante",
+    "cepa": "merlot",
+    "bodega": "Bodega Exclusiva"
   },
   {
     "id": 18,
     "imagen": "/img/vino3.png",
-    "titulo": "Producto 18",
+    "titulo": "Bonarda Reserva",
     "precio": 250,
-    "descripcion": "Descripción del producto 18"
+    "descripcion": "Bonarda de reserva",
+    "cepa": "bonarda",
+    "bodega": "Bodega Elite"
   }
 ]
