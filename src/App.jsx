@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./assets/components/navbar/Navbar";
+import Footer from "./assets/components/footer/Footer";
 import Home from "./assets/pages/home/Home";
 import About from "./assets/pages/about/About";
 import Testify from "./assets/pages/testify/Testify";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/testify" element={<Testify />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

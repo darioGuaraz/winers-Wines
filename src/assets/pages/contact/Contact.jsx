@@ -80,12 +80,48 @@ function Contact() {
             <h2>Desarrollado por</h2>
             <p className="developer-name">Dario Hernan Guaraz</p>
 
-            <img
-              src="/img/fotodaro.jpeg"
-              alt="Dario Hernan Guaraz"
-              className="developer-photo"
-            />
+            <video src="/img/heroVideoAbout.mp4" autoPlay loop muted></video>
+          </div>
 
+          <div className="container2contact">
+            <div className="contact-card card-form">
+              <h2>Envíanos tu Consulta</h2>
+
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="email">Tu Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="tu@email.com"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Cuéntanos tu consulta..."
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn-submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Enviando..." : "Enviar Consulta"}
+                </button>
+              </form>
+            </div>
             <div className="contact-details">
               <p className="phone-label">Teléfono de Contacto:</p>
               <a
@@ -97,41 +133,6 @@ function Contact() {
                 +54 9 11 6790-7664
               </a>
             </div>
-          </div>
-
-          <div className="contact-card card-form">
-            <h2>Envíanos tu Consulta</h2>
-
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="email">Tu Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="tu@email.com"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Mensaje</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Cuéntanos tu consulta..."
-                  required
-                />
-              </div>
-
-              <button type="submit" className="btn-submit" disabled={isLoading}>
-                {isLoading ? "Enviando..." : "Enviar Consulta"}
-              </button>
-            </form>
           </div>
         </div>
       </div>
