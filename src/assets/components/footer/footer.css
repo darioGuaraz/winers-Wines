@@ -17,8 +17,8 @@
    ======================================== */
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1.5fr;
+  gap: 30px;
   margin-bottom: 40px;
 }
 
@@ -75,9 +75,19 @@
   grid-column: 2;
 }
 
-/* SECCIÓN: CATEGORÍAS */
+/* SECCIÓN: CEPAS */
 .footer-categories {
   grid-column: 3;
+}
+
+/* SECCIÓN: BODEGAS */
+.footer-bodegas {
+  grid-column: 4;
+}
+
+/* SECCIÓN: CONTACTO */
+.footer-contact {
+  grid-column: 5;
 }
 
 /* LISTA DE ENLACES */
@@ -113,11 +123,6 @@
 
 .footer-list li a:hover::before {
   margin-right: 15px;
-}
-
-/* SECCIÓN: CONTACTO */
-.footer-contact {
-  grid-column: 4;
 }
 
 .contact-item {
@@ -245,6 +250,10 @@
     grid-column: 2;
   }
 
+  .footer-bodegas {
+    grid-column: 1 / -1;
+  }
+
   .footer-contact {
     grid-column: 1 / -1;
   }
@@ -297,6 +306,10 @@
   }
 
   .footer-categories {
+    grid-column: 1;
+  }
+
+  .footer-bodegas {
     grid-column: 1;
   }
 

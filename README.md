@@ -23,30 +23,28 @@ Plataforma de e-commerce moderna especializada en vinos boutique y artesanales d
 
 ## ✨ Características
 
-### 🛒 Carrito Inteligente
+### 🛒 Carrito
+
 - Agregar/eliminar productos en tiempo real
 - Modal interactivo con información completa
 - Cálculo automático de totales
 - Integración directa con WhatsApp
 
-### 📱 Diseño Responsive
-- Mobile-first approach
-- Breakpoints optimizados: 480px, 768px, 1024px, 1200px
-- Navegación adaptativa con menú hamburguesa
-- Imágenes y videos optimizados
+### 🧭 Navegación SPA
 
-### 🧭 Navegación SPA Profesional
 - React Router Dom v7 para navegación sin recarga
 - Rutas dinámicas para filtros (cepas, bodegas)
 - URLs amigables y compartibles
 
 ### 🔥 Integración Firebase Firestore
+
 - Base de datos en tiempo real
 - Carga dinámica de productos
 - Escalabilidad automática
 - Backups automáticos
 
 ### 💬 Integración WhatsApp
+
 - Botón flotante persistente
 - Botón en carrito para compra directa
 - Mensajes automáticos con detalles del pedido
@@ -56,22 +54,23 @@ Plataforma de e-commerce moderna especializada en vinos boutique y artesanales d
 
 ## 🛠️ Stack Tecnológico
 
-| Tecnología | Versión | Propósito |
-|-----------|---------|----------|
-| React | 19.1 | Librería UI principal |
-| React Router DOM | 7.9 | Enrutamiento SPA |
-| Vite | 7.1 | Build tool y dev server |
-| Firebase SDK | 12.7 | Integración Firestore |
-| SweetAlert2 | 11.26 | Notificaciones |
-| EmailJS | 4.4 | Envío de emails |
-| CSS3 | - | Estilos responsivos |
-| ESLint | 9.36 | Linting |
+| Tecnología       | Versión | Propósito               |
+| ---------------- | ------- | ----------------------- |
+| React            | 19.1    | Librería UI principal   |
+| React Router DOM | 7.9     | Enrutamiento SPA        |
+| Vite             | 7.1     | Build tool y dev server |
+| Firebase SDK     | 12.7    | Integración Firestore   |
+| SweetAlert2      | 11.26   | Notificaciones          |
+| EmailJS          | 4.4     | Envío de emails         |
+| CSS3             | -       | Estilos responsivos     |
+| ESLint           | 9.36    | Linting                 |
 
 ---
 
 ## 🚀 Instalación
 
 ### Requisitos Previos
+
 ```bash
 Node.js ≥ 18.0.0
 npm ≥ 9.0.0
@@ -79,18 +78,21 @@ Cuenta Firebase con Firestore
 ```
 
 ### Paso 1: Clonar Repositorio
+
 ```bash
 git clone https://github.com/darioGuaraz/winers-wines.git
 cd winers-wines
 ```
 
 ### Paso 2: Instalar Dependencias
+
 ```bash
 npm install
 ```
 
 ### Paso 3: Configurar Variables de Entorno
-Crear `.env.local` en la raíz:
+
+`.env.local` en la raíz:
 
 ```env
 VITE_FIREBASE_API_KEY=tu_api_key
@@ -102,6 +104,7 @@ VITE_FIREBASE_APP_ID=tu_app_id
 ```
 
 ### Paso 4: Ejecutar en Desarrollo
+
 ```bash
 npm run dev
 ```
@@ -109,6 +112,7 @@ npm run dev
 La aplicación se abrirá en `http://localhost:5173`
 
 ### Paso 5: Build para Producción
+
 ```bash
 npm run build
 npm run preview
@@ -178,18 +182,16 @@ DOM
 ```javascript
 {
   // Estado de productos
-  products,      // Array de Firestore
-  loading,       // boolean
-  error,         // string | null
-  
-  // Estado de carrito
-  cartItems,     // Array de items
-  
-  // Funciones
-  addToCart,     // Agregar producto
-  removeSelected,// Eliminar seleccionados
-  clearCart,     // Vaciar carrito
-  handleBuy      // Enviar a WhatsApp
+  products, // Array de Firestore
+    loading, // boolean
+    error, // string | null
+    // Estado de carrito
+    cartItems, // Array de items
+    // Funciones
+    addToCart, // Agregar producto
+    removeSelected, // Eliminar seleccionados
+    clearCart, // Vaciar carrito
+    handleBuy; // Enviar a WhatsApp
 }
 ```
 
@@ -288,7 +290,7 @@ Agregar ruta en `App.jsx`:
 import { WINE_CEPAS, THEME_COLORS } from "../constants/appConstants";
 
 // Acceder
-WINE_CEPAS.forEach(c => console.log(c.nombre));
+WINE_CEPAS.forEach((c) => console.log(c.nombre));
 console.log(THEME_COLORS.primary);
 ```
 
@@ -299,7 +301,7 @@ import { useCart } from "../hooks/useCart";
 
 function Componente() {
   const { products, cartItems, addToCart, loading } = useCart();
-  
+
   return (
     <>
       {loading ? <p>Cargando...</p> : <p>{products.length} productos</p>}
@@ -312,17 +314,19 @@ function Componente() {
 ### Convenciones de Código
 
 ✅ **Nombres descriptivos**
+
 ```javascript
-const handleAddToCart = (product) => {}
-const WINE_CEPAS = []
-const isLoading = false
+const handleAddToCart = (product) => {};
+const WINE_CEPAS = [];
+const isLoading = false;
 ```
 
 ❌ **Evitar abreviaciones**
+
 ```javascript
-const handleAdd = (p) => {}
-const cps = []
-const loading = false
+const handleAdd = (p) => {};
+const cps = [];
+const loading = false;
 ```
 
 ---
@@ -368,12 +372,12 @@ export const WINE_CEPAS = [
 
 ## 📱 Responsive Breakpoints
 
-| Dispositivo | Ancho | Columns |
-|-----------|-------|---------|
-| Mobile | < 480px | 1 |
-| Mobile | 480-768px | 1-2 |
-| Tablet | 768-1024px | 2-3 |
-| Desktop | > 1024px | 3+ |
+| Dispositivo | Ancho      | Columns |
+| ----------- | ---------- | ------- |
+| Mobile      | < 480px    | 1       |
+| Mobile      | 480-768px  | 1-2     |
+| Tablet      | 768-1024px | 2-3     |
+| Desktop     | > 1024px   | 3+      |
 
 ---
 
@@ -396,6 +400,7 @@ npm run build
 ### Configurar Variables de Entorno
 
 En tu plataforma de deployment:
+
 1. Settings → Environment Variables
 2. Agregar todas las `VITE_FIREBASE_*`
 
@@ -406,6 +411,7 @@ En tu plataforma de deployment:
 ### Errores Comunes
 
 **1. "Products undefined"**
+
 ```javascript
 // Verificar CartProvider en App.jsx
 <CartProvider>
@@ -414,11 +420,13 @@ En tu plataforma de deployment:
 ```
 
 **2. "Firestore collection not found"**
+
 - Verificar que Firestore existe
 - Nombre de collection es "productos"
 - Revisar reglas de seguridad
 
 **3. "WhatsApp no abre"**
+
 - Número con formato: 541234567890
 - Revisar URL encoding
 - Probar en navegador diferente
@@ -434,9 +442,46 @@ console.log("Error:", error);
 
 ---
 
-## 📈 Roadmap
+## 🚀 Deployment en Vercel
+
+### Variables de Entorno en Producción
+
+**⚠️ IMPORTANTE**: Las variables de `.env.local` **NO** se envían a Vercel automáticamente.
+
+Debes configurarlas manualmente en el panel de Vercel:
+
+1. Ve a [Vercel Dashboard](https://vercel.com/dashboard)
+2. Selecciona tu proyecto `winers-wines`
+3. **Settings** → **Environment Variables**
+4. Agrega estas 6 variables:
+
+| Nombre                              | Valor                  |
+| ----------------------------------- | ---------------------- |
+| `VITE_FIREBASE_API_KEY`             | Tu API Key de Firebase |
+| `VITE_FIREBASE_AUTH_DOMAIN`         | Tu Auth Domain         |
+| `VITE_FIREBASE_PROJECT_ID`          | Tu Project ID          |
+| `VITE_FIREBASE_STORAGE_BUCKET`      | Tu Storage Bucket      |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Tu Sender ID           |
+| `VITE_FIREBASE_APP_ID`              | Tu App ID              |
+
+**Para cada variable:**
+
+- Marca: ✅ Production, ✅ Preview, ✅ Development
+
+5. Haz **Redeploy** del último deployment
+
+Más detalles en [VERCEL_ENVIRONMENT_SETUP.md](./VERCEL_ENVIRONMENT_SETUP.md)
+
+### URL en Producción
+
+```
+https://winers-wines.vercel.app/
+```
+
+---
 
 ### Fase 1 - Actual ✅
+
 - [x] Landing page
 - [x] Carrito de compras
 - [x] Firebase Firestore
@@ -444,6 +489,7 @@ console.log("Error:", error);
 - [x] Responsive design
 
 ### Fase 2 - Próximo Sprint
+
 - [ ] Autenticación de usuarios
 - [ ] Órdenes persistentes
 - [ ] Historial de compras
@@ -451,6 +497,7 @@ console.log("Error:", error);
 - [ ] Búsqueda avanzada
 
 ### Fase 3 - Largo Plazo
+
 - [ ] Backend Node.js/Express
 - [ ] Sistema de pagos
 - [ ] Panel administrativo
@@ -478,6 +525,7 @@ MIT - Ver [LICENSE](LICENSE) para detalles
 ## 👥 Autor
 
 **Dario Guaraz**
+
 - GitHub: [@darioGuaraz](https://github.com/darioGuaraz)
 - Email: darioguaraz@gmail.com
 - WhatsApp: +54 9 11 6790-7664

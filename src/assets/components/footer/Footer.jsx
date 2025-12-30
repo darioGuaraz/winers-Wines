@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { WINE_CEPAS, WINE_BODEGAS } from "../../../constants/appConstants";
 import "./footer.css";
 
 function Footer() {
@@ -30,36 +32,43 @@ function Footer() {
             <h3 className="footer-title">Enlaces Rápidos</h3>
             <ul className="footer-list">
               <li>
-                <a href="/">Inicio</a>
+                <Link to="/">Inicio</Link>
               </li>
               <li>
-                <a href="/about">Nosotros</a>
+                <Link to="/about">Nosotros</Link>
               </li>
               <li>
-                <a href="/testify">Testimonios</a>
+                <Link to="/testify">Testimonios</Link>
               </li>
               <li>
-                <a href="/contact">Contacto</a>
+                <Link to="/contact">Contacto</Link>
               </li>
             </ul>
           </div>
 
-          {/* Sección: Categorías */}
+          {/* Sección: Cepas */}
           <div className="footer-section footer-categories">
-            <h3 className="footer-title">Categorías</h3>
+            <h3 className="footer-title">Cepas</h3>
             <ul className="footer-list">
-              <li>
-                <a href="/?cepa=Malbec">Malbec</a>
-              </li>
-              <li>
-                <a href="/?cepa=Cabernet">Cabernet</a>
-              </li>
-              <li>
-                <a href="/?cepa=Merlot">Merlot</a>
-              </li>
-              <li>
-                <a href="/?cepa=Torrontés">Torrontés</a>
-              </li>
+              {WINE_CEPAS.map((cepa) => (
+                <li key={cepa.id}>
+                  <Link to={`/vinos/${cepa.id}`}>{cepa.nombre}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Sección: Bodegas */}
+          <div className="footer-section footer-bodegas">
+            <h3 className="footer-title">Bodegas</h3>
+            <ul className="footer-list">
+              {WINE_BODEGAS.map((bodega) => (
+                <li key={bodega}>
+                  <Link to={`/bodega/${encodeURIComponent(bodega)}`}>
+                    {bodega}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
