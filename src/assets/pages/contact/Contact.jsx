@@ -80,7 +80,7 @@ function Contact() {
             <h2>Desarrollado por</h2>
             <p className="developer-name">Dario Hernan Guaraz</p>
 
-            <video src="/img/heroVideoAbout.mp4" autoPlay loop muted></video>
+            <video src="/img/contacto.mp4" autoPlay loop muted></video>
           </div>
 
           <div className="container2contact">

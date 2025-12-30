@@ -70,12 +70,22 @@ h1 {
   border: none;
   background-color: #570229;
   color: #ffffff;
-}
-.btnSelect {
   height: 4vh;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
-/* Tablet - 768px a 1024px */
+.btnSelect:hover {
+  background-color: #3d1620;
+  transform: scale(1.05);
+}
+
+.btnSelect:active {
+  transform: scale(0.98);
+}
+
+/* Sweet alert custom colors */
 @media (max-width: 1024px) {
   main {
     gap: 6%;

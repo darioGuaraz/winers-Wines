@@ -16,7 +16,8 @@
   align-items: center;
   gap: 8px;
 
-  border: 1px solid #570229;
+  border: none;
+
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -28,13 +29,9 @@
 }
 
 .filter-btn:hover {
+  border-bottom: #3d1620;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(87, 2, 41, 0.3);
-  background: linear-gradient(135deg, #e58ca4 0%, #8b0023 100%);
-  color: #ffffff;
-}
-
-.filter-btn.active {
   background: linear-gradient(135deg, #e58ca4 0%, #8b0023 100%);
   color: #ffffff;
 }

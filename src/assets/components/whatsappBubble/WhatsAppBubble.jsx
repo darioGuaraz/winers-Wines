@@ -1,21 +1,16 @@
-// WhatsAppBubble.jsx
 import React from "react";
-
+import { WHATSAPP_URL, IMAGE_PATHS } from "../../../constants/appConstants";
 import "./whatsAppBubble.css";
-
-const message = encodeURIComponent(
-  "Hola! Vi su sitio y me gustaría obtener más información."
-);
-const url = `https://api.whatsapp.com/send?phone=541167907664&text=${message}`;
 
 const WhatsAppBubble = () => (
   <a
-    href={url}
+    href={WHATSAPP_URL}
     target="_blank"
     rel="noopener noreferrer"
     className="whatsapp-bubble"
+    aria-label="Contactar por WhatsApp"
   >
-    <img src="img/wspico.png" alt="WhatsApp" />
+    <img src={IMAGE_PATHS.whatsappIcon} alt="WhatsApp" />
   </a>
 );
 

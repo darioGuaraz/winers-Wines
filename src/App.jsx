@@ -6,6 +6,7 @@ import About from "./assets/pages/about/About";
 import Testify from "./assets/pages/testify/Testify";
 import Contact from "./assets/pages/contact/Contact";
 import Main from "./assets/components/main/Main";
+import Cart from "./assets/components/cart/Cart";
 import WhatsAppBubble from "./assets/components/whatsappBubble/WhatsAppBubble.jsx";
 import { CartProvider } from "./context/CartContext";
 
@@ -16,6 +17,7 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <Navbar />
+        <Cart />
         <WhatsAppBubble />
         <Routes>
           <Route path="/" element={<Home />} />

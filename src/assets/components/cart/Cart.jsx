@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import lgocart from "../../../../public/img/carrito.png";
+import { IMAGE_PATHS } from "../../../constants/appConstants";
 import "./cart.css";
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../../hooks/useCart";
 
 const Cart = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -24,8 +24,13 @@ const Cart = () => {
     }
   }, [isModalOpen]);
 
-  // No mostrar nada si no hay items
-  if (cartItems.length === 0) return null;
+  // Mostrar burbuja del carrito siempre (con o sin items)
+  // Solo abrir modal si hay items en el carrito
+  const handleCartClick = () => {
+    if (cartItems.length > 0) {
+      setIsModalOpen(true);
+    }
+  };
 
   const total = cartItems.reduce((acc, item) => acc + item.precio, 0);
 
@@ -40,15 +45,16 @@ const Cart = () => {
       {/* Burbuja del carrito */}
       <button
         className="cart-bubble"
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleCartClick}
         aria-label="Abrir carrito"
+        title={cartItems.length === 0 ? "Carrito vacío - Agrega productos para comprar" : `${cartItems.length} producto(s) en tu carrito`}
       >
-        <img src={lgocart} alt="Carrito" />
+        <img src={IMAGE_PATHS.cart} alt="Carrito" />
         <span className="cart-counter">{cartItems.length}</span>
       </button>
 
-      {/* Modal del carrito */}
-      {isModalOpen && (
+      {/* Modal del carrito - Solo mostrar si hay items */}
+      {isModalOpen && cartItems.length > 0 && (
         <div className="cart-modal-overlay">
           <div className="cart-modal" ref={modalRef}>
             <button

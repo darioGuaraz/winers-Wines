@@ -22,9 +22,6 @@
   flex-wrap: wrap;
 }
 
-/* ========================================
-   TARJETA DEVELOPER (PRIMERA)
-   ======================================== */
 .contact-card {
   background: rgba(255, 255, 255, 0.541);
   border-radius: 12px;
@@ -47,7 +44,7 @@
 }
 .card-developer video {
   height: 900px;
-  width: 1000px;
+
   object-fit: cover;
 }
 
@@ -201,7 +198,7 @@
 }
 
 /* ========================================
-   RESPONSIVE - TABLET GRANDE (1024px)
+   RESPONSIVE - TABLET  (1024px)
    ======================================== */
 @media (max-width: 1024px) {
   .contact {
@@ -248,7 +245,7 @@
 }
 
 /* ========================================
-   RESPONSIVE - TABLET PEQUEÑO (768px)
+   RESPONSIVE - TABLET  (768px)
    ======================================== */
 @media (max-width: 768px) {
   .contact {

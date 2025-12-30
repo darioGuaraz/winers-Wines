@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Firebase
+.env
+.env.local
+firebase-key.json
+
+# Upload scripts
+uploadScript.js
+uploadWithAdmin.js
+testFirebase.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

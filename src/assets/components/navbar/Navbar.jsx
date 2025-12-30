@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { IMAGE_PATHS } from "../../../constants/appConstants";
 import "./navbar.css";
-
-const logo = "img/headerlogo1.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 912);
   const location = useLocation();
 
   React.useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 912);
+      // Responsive behavior handled via CSS media queries
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -33,14 +30,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className="navbar"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src={logo} alt="winers wines" className="navbar-logo" />
+          <img src={IMAGE_PATHS.logo} alt="winers wines" className="navbar-logo" />
         </Link>
 
         <button

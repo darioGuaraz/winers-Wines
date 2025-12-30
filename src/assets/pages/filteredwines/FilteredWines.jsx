@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import menu from "../../data/menu.json";
+import { CEPA_DISPLAY_MAP } from "../../../constants/appConstants";
 import "./filteredwines.css";
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../../hooks/useCart";
 import FilterBar from "../../components/filterbar/FilterBar";
-import Swal from "sweetalert2";
+import ProductCard from "../../components/product/ProductCard";
 
 const FilteredWines = () => {
   const { cepa, bodega } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const { addToCart } = useCart();
+  const { products, loading } = useCart();
 
   useEffect(() => {
-    let filtered = menu;
+    let filtered = products;
 
     if (cepa) {
       filtered = filtered.filter((wine) => wine.cepa === cepa);
@@ -25,35 +25,15 @@ const FilteredWines = () => {
     }
 
     setFilteredProducts(filtered);
-  }, [cepa, bodega]);
-
-  const handleComprar = (producto) => {
-    addToCart(producto);
-
-    Swal.fire({
-      title: "¡Producto agregado!",
-      text: `${producto.titulo} ($${producto.precio}) fue añadido al carrito.`,
-      fontFamily: "poppins, sans-serif",
-      icon: "success",
-      iconColor: "#570229",
-      confirmButtonText: "OK",
-      background: "#fffef7ff",
-      confirmButtonColor: "#570229",
-      timer: 1500,
-    });
-  };
+  }, [cepa, bodega, products]);
 
   const getCepaDisplay = (cepaId) => {
-    const cepasMap = {
-      malbec: "Malbec",
-      merlot: "Merlot",
-      syrah: "Syrah",
-      cabernet: "Cabernet Sauvignon",
-      bonarda: "Bonarda",
-      petit_verdot: "Petit Verdot",
-    };
-    return cepasMap[cepaId] || cepaId;
+    return CEPA_DISPLAY_MAP[cepaId] || cepaId;
   };
+
+  if (loading) {
+    return <main><h1>Cargando productos...</h1></main>;
+  }
 
   if (filteredProducts.length === 0) {
     return (
@@ -87,21 +67,7 @@ const FilteredWines = () => {
 
       <div className="wines-grid">
         {filteredProducts.map((producto) => (
-          <div key={producto.id} className="card">
-            <img src={producto.imagen} alt={producto.titulo} />
-            <h2>{producto.titulo}</h2>
-            <p className="bodega-name">{producto.bodega}</p>
-            <p>{producto.descripcion}</p>
-            <div className="card-footer">
-              <span className="precio">${producto.precio}</span>
-              <button
-                onClick={() => handleComprar(producto)}
-                className="btnSelect"
-              >
-                Comprar
-              </button>
-            </div>
-          </div>
+          <ProductCard key={producto.id} producto={producto} variant="filtered" />
         ))}
       </div>
     </main>

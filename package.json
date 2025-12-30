@@ -1,8 +1,10 @@
 {
-  "name": "talentotechreact",
+  "name": "winers-wines",
+  "description": "Plataforma de e-commerce de vinos boutique argentinos con integración Firebase",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": "Dario Hernan Guaraz",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +13,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "firebase": "^12.7.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.6",

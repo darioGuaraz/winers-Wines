@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import { getProducts } from "../services/productService";
 
 // Crear el contexto
 const CartContext = createContext();
@@ -6,6 +7,28 @@ const CartContext = createContext();
 // Proveedor del contexto - envuelve la app
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Cargar productos de Firebase al montar el componente
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        setLoading(true);
+        const data = await getProducts();
+        setProducts(data);
+        setError(null);
+      } catch (err) {
+        console.error("Error cargando productos:", err);
+        setError("Error al cargar los productos");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
 
   // Agregar un producto al carrito
   const addToCart = (producto) => {
@@ -38,6 +61,9 @@ export const CartProvider = ({ children }) => {
 
   const value = {
     cartItems,
+    products,
+    loading,
+    error,
     addToCart,
     removeSelected,
     clearCart,
@@ -47,11 +73,5 @@ export const CartProvider = ({ children }) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-// Hook personalizado para usar el contexto
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart debe ser usado dentro de CartProvider");
-  }
-  return context;
-};
+// Export CartContext for use in hooks
+export { CartContext };

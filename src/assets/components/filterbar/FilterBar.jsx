@@ -1,29 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { WINE_CEPAS, WINE_BODEGAS } from "../../../constants/appConstants";
 import "./filterbar.css";
 
 const FilterBar = () => {
   const navigate = useNavigate();
   const [expandedSection, setExpandedSection] = useState(null);
   const menuRef = useRef(null);
-
-  const cepas = [
-    { id: "malbec", nombre: "Malbec" },
-    { id: "merlot", nombre: "Merlot" },
-    { id: "syrah", nombre: "Syrah" },
-    { id: "cabernet", nombre: "Cabernet" },
-    { id: "bonarda", nombre: "Bonarda" },
-    { id: "petit_verdot", nombre: "Petit Verdot" },
-  ];
-
-  const bodegas = [
-    "Bodega Pampa",
-    "Bodega Premium",
-    "Bodega Elite",
-    "Bodega Clásica",
-    "Bodega Tradicional",
-    "Bodega Exclusiva",
-  ];
 
   // Cerrar menú al hacer click fuera
   useEffect(() => {
@@ -83,7 +66,7 @@ const FilterBar = () => {
 
         {expandedSection === "cepas" && (
           <ul className="filter-dropdown cepas-dropdown">
-            {cepas.map((c) => (
+            {WINE_CEPAS.map((c) => (
               <li key={c.id}>
                 <button
                   className="dropdown-item"
@@ -115,7 +98,7 @@ const FilterBar = () => {
 
         {expandedSection === "bodegas" && (
           <ul className="filter-dropdown bodegas-dropdown">
-            {bodegas.map((bodega) => (
+            {WINE_BODEGAS.map((bodega) => (
               <li key={bodega}>
                 <button
                   className="dropdown-item"
