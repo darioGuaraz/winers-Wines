@@ -32,7 +32,11 @@ const FilteredWines = () => {
   };
 
   if (loading) {
-    return <main><h1>Cargando productos...</h1></main>;
+    return (
+      <main>
+        <h1>Cargando productos...</h1>
+      </main>
+    );
   }
 
   if (filteredProducts.length === 0) {
@@ -67,7 +71,11 @@ const FilteredWines = () => {
 
       <div className="wines-grid">
         {filteredProducts.map((producto) => (
-          <ProductCard key={producto.id} producto={producto} variant="filtered" />
+          <ProductCard
+            key={producto.id}
+            producto={producto}
+            variant="filtered"
+          />
         ))}
       </div>
     </main>

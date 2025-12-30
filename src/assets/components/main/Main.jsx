@@ -30,7 +30,9 @@ function Main() {
     return (
       <main>
         <h1>Cargando productos...</h1>
-        <p style={{ textAlign: 'center', color: '#666' }}>Por favor espera un momento...</p>
+        <p style={{ textAlign: "center", color: "#666" }}>
+          Por favor espera un momento...
+        </p>
       </main>
     );
   }
@@ -39,8 +41,8 @@ function Main() {
     return (
       <main>
         <h1>Error al cargar productos</h1>
-        <p style={{ textAlign: 'center', color: '#d32f2f' }}>{error}</p>
-        <p style={{ textAlign: 'center', color: '#666' }}>
+        <p style={{ textAlign: "center", color: "#d32f2f" }}>{error}</p>
+        <p style={{ textAlign: "center", color: "#666" }}>
           Revisa tu conexión a internet y recarga la página (F5)
         </p>
       </main>
@@ -52,7 +54,7 @@ function Main() {
       <main>
         <h1>Listado de productos</h1>
         <FilterBar />
-        <div style={{ textAlign: 'center', padding: '40px', color: '#666' }}>
+        <div style={{ textAlign: "center", padding: "40px", color: "#666" }}>
           <p>No se encontraron productos con los filtros seleccionados.</p>
         </div>
       </main>

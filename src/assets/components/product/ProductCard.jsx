@@ -4,7 +4,7 @@ import { useCart } from "../../../hooks/useCart";
 
 /**
  * Componente ProductCard - Tarjeta reutilizable de producto
- * 
+ *
  * @param {Object} producto - Datos del producto
  * @param {string} producto.id - ID único del producto
  * @param {string} producto.titulo - Nombre del vino
@@ -40,16 +40,11 @@ const ProductCard = ({ producto, variant = "main" }) => {
       <div className="card">
         <img src={producto.imagen} alt={producto.titulo} />
         <h2>{producto.titulo}</h2>
-        {producto.bodega && (
-          <p className="bodega-name">{producto.bodega}</p>
-        )}
+        {producto.bodega && <p className="bodega-name">{producto.bodega}</p>}
         <p>{producto.descripcion}</p>
         <div className="card-footer">
           <span className="precio">${producto.precio}</span>
-          <button
-            onClick={() => handleComprar(producto)}
-            className="btnSelect"
-          >
+          <button onClick={() => handleComprar(producto)} className="btnSelect">
             Comprar
           </button>
         </div>
@@ -64,10 +59,7 @@ const ProductCard = ({ producto, variant = "main" }) => {
       <p>{producto.descripcion}</p>
       <span className="precio">${producto.precio}</span>
 
-      <button
-        onClick={() => handleComprar(producto)}
-        className="btnSelect"
-      >
+      <button onClick={() => handleComprar(producto)} className="btnSelect">
         Comprar
       </button>
     </div>

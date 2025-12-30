@@ -33,7 +33,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src={IMAGE_PATHS.logo} alt="winers wines" className="navbar-logo" />
+          <img
+            src={IMAGE_PATHS.logo}
+            alt="winers wines"
+            className="navbar-logo"
+          />
         </Link>
 
         <button

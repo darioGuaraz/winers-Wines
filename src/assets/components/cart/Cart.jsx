@@ -47,7 +47,11 @@ const Cart = () => {
         className="cart-bubble"
         onClick={handleCartClick}
         aria-label="Abrir carrito"
-        title={cartItems.length === 0 ? "Carrito vacío - Agrega productos para comprar" : `${cartItems.length} producto(s) en tu carrito`}
+        title={
+          cartItems.length === 0
+            ? "Carrito vacío - Agrega productos para comprar"
+            : `${cartItems.length} producto(s) en tu carrito`
+        }
       >
         <img src={IMAGE_PATHS.cart} alt="Carrito" />
         <span className="cart-counter">{cartItems.length}</span>
