@@ -16,12 +16,24 @@ export const CartProvider = ({ children }) => {
     const loadProducts = async () => {
       try {
         setLoading(true);
-        const data = await getProducts();
-        setProducts(data);
         setError(null);
+        
+        // Log para debugging
+        console.log('Iniciando carga de productos...');
+        
+        const data = await getProducts();
+        
+        console.log(`Productos cargados: ${data.length}`, data);
+        
+        if (!data || data.length === 0) {
+          setError("No se encontraron productos. Revisa tu conexión a Firebase.");
+          console.warn("⚠️ Firebase retornó 0 productos");
+        } else {
+          setProducts(data);
+        }
       } catch (err) {
-        console.error("Error cargando productos:", err);
-        setError("Error al cargar los productos");
+        console.error("❌ Error cargando productos:", err);
+        setError(`Error: ${err.message || 'Error desconocido al cargar productos'}`);
       } finally {
         setLoading(false);
       }
